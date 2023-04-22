@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: servicio-items
+server:
+  port: 8082
+
+client:
+  rest:
+    application:
+      name: servicio-productos
+    url: http://localhost:8081/
