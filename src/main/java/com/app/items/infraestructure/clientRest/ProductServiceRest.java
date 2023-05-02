@@ -2,9 +2,9 @@ package com.app.items.infraestructure.clientRest;
 
 import com.app.items.domain.models.Product;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,4 +16,13 @@ public interface ProductServiceRest {
 
     @GetMapping("api-product/{id}")
     ResponseEntity<Product> findById(@PathVariable Integer id);
+    @DeleteMapping("api-product/eliminar")
+    ResponseEntity<Void> deleteProduct(@RequestParam Integer id);
+
+    @PostMapping("api-product")
+    ResponseEntity<Product> save(@RequestBody Product productDTO);
+
+    @PutMapping("api-product")
+    ResponseEntity<Product> update(@RequestBody Product productDTO);
+
 }

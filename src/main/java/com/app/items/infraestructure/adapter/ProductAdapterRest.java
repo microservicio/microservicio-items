@@ -35,4 +35,31 @@ public class ProductAdapterRest implements ProductAdapterRestPort {
         }
     }
 
+    @Override
+    public void deleteProductById(Integer id) {
+        try {
+            productServiceRest.deleteProduct(id);
+        } catch (FeignException.FeignClientException feignClientException) {
+            throw new RuntimeException(feignClientException.getMessage());
+        }
+    }
+
+    @Override
+    public Product save(Product product) {
+        try {
+           return productServiceRest.save(product).getBody();
+        } catch (FeignException.FeignClientException feignClientException) {
+            throw new RuntimeException(feignClientException.getMessage());
+        }
+    }
+
+    @Override
+    public Product update(Product product) {
+        try {
+            return productServiceRest.update(product).getBody();
+        } catch (FeignException.FeignClientException feignClientException) {
+            throw new RuntimeException(feignClientException.getMessage());
+        }
+    }
+
 }

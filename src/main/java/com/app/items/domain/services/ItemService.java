@@ -20,13 +20,31 @@ public class ItemService implements ItemServicePort {
     public List<Item> findAll() {
         return productAdapterRestPort.findAllProducts()
                 .stream().map(convert())
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
     public Item findById(Integer id, Integer cantidad) {
         var product = productAdapterRestPort.findById(id);
         return new Item(product, cantidad);
+    }
+
+    @Override
+    public Product save(Product product) {
+        return productAdapterRestPort.save(product);
+    }
+
+    @Override
+    public Product update(Product product) {
+        var oldProduct = productAdapterRestPort.findById(product.getId());
+        oldProduct.setNombre(product.getNombre());
+        oldProduct.setPrecio(product.getPrecio());
+        return productAdapterRestPort.update(oldProduct);
+    }
+
+    @Override
+    public void deleteProduct(Integer id) {
+      productAdapterRestPort.deleteProductById(id);
     }
 
     private Function<Product, Item> convert() {
