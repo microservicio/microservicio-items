@@ -1,7 +1,7 @@
 package com.app.items.infraestructure.api;
 
+import com.app.commons.models.Product;
 import com.app.items.domain.models.Item;
-import com.app.items.domain.models.Product;
 import com.app.items.domain.ports.ItemServicePort;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

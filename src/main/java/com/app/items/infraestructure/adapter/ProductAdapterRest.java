@@ -1,6 +1,7 @@
 package com.app.items.infraestructure.adapter;
 
-import com.app.items.domain.models.Product;
+
+import com.app.commons.models.Product;
 import com.app.items.domain.ports.ProductAdapterRestPort;
 import com.app.items.infraestructure.clientRest.ProductServiceRest;
 import feign.FeignException;

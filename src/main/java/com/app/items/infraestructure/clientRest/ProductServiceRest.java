@@ -1,8 +1,7 @@
 package com.app.items.infraestructure.clientRest;
 
-import com.app.items.domain.models.Product;
+import com.app.commons.models.Product;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

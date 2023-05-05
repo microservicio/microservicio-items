@@ -1,5 +1,6 @@
 package com.app.items.domain.models;
 
+import com.app.commons.models.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

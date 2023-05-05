@@ -1,13 +1,12 @@
 package com.app.items.domain.services;
 
+import com.app.commons.models.Product;
 import com.app.items.domain.models.Item;
-import com.app.items.domain.models.Product;
 import com.app.items.domain.ports.ItemServicePort;
 import com.app.items.domain.ports.ProductAdapterRestPort;
 
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class ItemService implements ItemServicePort {
 

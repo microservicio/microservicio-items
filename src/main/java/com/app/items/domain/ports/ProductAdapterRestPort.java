@@ -1,7 +1,6 @@
 package com.app.items.domain.ports;
 
-import com.app.items.domain.models.Item;
-import com.app.items.domain.models.Product;
+import com.app.commons.models.Product;
 
 import java.util.List;
 
